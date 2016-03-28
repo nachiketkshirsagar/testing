@@ -6,6 +6,4 @@ class UploadFileClass
     @config = @mer_utility.config
     @flag = 0
   end
-
-  
 end
