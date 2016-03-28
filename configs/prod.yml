@@ -1,0 +1,17 @@
+---
+set_url : 'http://hem.com'
+signup_page : 'https://hem.com/en-gb/signup/?ref=home.home.hd_signup&x_from=%2F'
+ios_capabilities: {
+  appiumVersion: "1.4.0",
+  platformName: "iOS",
+  platformVersion: "9.0",
+  deviceName: "iPhone Simulator",
+  browserName: "Safari",
+  name: "Basic iOS Web Test",
+}
+email: 'sourabh.pataskar@hem.com'
+password: 'hemqa4589'
+product_details:
+  region: 'EU'
+  product_type: 'product'
+  product_id: '12429'

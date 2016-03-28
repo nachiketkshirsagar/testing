@@ -1,0 +1,13 @@
+---
+LoginPage:
+ button_login:
+   id: 'LoginButton1'
+ mer_dir:
+    xpath: ".//*[@id='toptable']/tbody/tr/td[2]/input"
+Upload:
+  upload_button:
+    xpath: ".//*[@id='smallbutton']"
+  file_name:
+    xpath: ".//*[@id='UploadForm']/table/tbody/tr[2]/td[1]/input"
+  sub_but:
+    xpath: ".//*[@id='UploadForm']/a[2]/img"
