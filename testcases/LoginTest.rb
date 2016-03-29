@@ -14,10 +14,8 @@ class LoginTest
     begin
       step1
       step2
-      step3
     rescue Exception => e
       p e.message
-      MyLog.log.error(e)
       p e.backtrace
 
     end
@@ -32,21 +30,10 @@ class LoginTest
   end
 
   def step2
-    if MerchantUtility.browse_page
-      p 'LoginTest::Browse Page Pass'
-    else
-      p 'LoginTest::Browse Page Fail'
-    end
-  end
-
-  def step3
     if MerchantUtility.logout
       p 'LoginTest::Logout Pass'
     else
       p 'LoginTest::Logout Fail'
     end
-  end
-
-  def processing_fuction1
   end
 end

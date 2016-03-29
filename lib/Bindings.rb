@@ -3,11 +3,11 @@ require 'appium_lib'
 require 'yaml'
 
 class Bindings
-  PLATFORM = {'web' => ['firefox', 'chrome', 'safari']}
+  #PLATFORM = {'web' => ['firefox', 'chrome', 'safari']}
 
-  def launch(medium, platform)
-    @@platform = platform
-    if platform == 'web'
+  def launch(medium)
+    #@@platform = platform
+    #if platform == 'web'
       case medium
         when 'firefox'
           profile = Selenium::WebDriver::Firefox::Profile.new
@@ -22,7 +22,6 @@ class Bindings
           @@driver.manage.window.maximize()
       end
     end
-  end
 =begin
   def find(value)
     @@platform == 'web'
@@ -56,7 +55,6 @@ class Bindings
   end
 =end
   def close
-    @@platform == 'web'
       @@driver.quit
   end
 end
