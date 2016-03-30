@@ -10,12 +10,13 @@ class MerchantUtility < Bindings
   end
 
   def login
+    get_url @config['set_url']
     creds = ['54.179.164.143', 'spice-test', 'spicetest123']
       var = ".//*[@id='LoginForm1']/fieldset/div"
         i = 1 
         j = 0
       while i < 4 do 
-        ele = driver.find_element(:xpath, var+"[#{i}]/input")
+        ele = @@driver.find_element(:xpath, var+"[#{i}]/input")
         ele.send_keys  "#{creds[j]}"
         i += 1
         j += 1

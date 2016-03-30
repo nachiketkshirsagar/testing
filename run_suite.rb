@@ -7,8 +7,8 @@
 require 'trollop'
 require 'fileutils'
 require 'logger'
-require '../hem-automation/lib/result_generation'
-require '../hem-automation/lib/email_sender'
+#require 'result_generation'
+#require 'email_sender'
 
 Dir["./lib/*.rb"].each {|file| require file }
 Dir["./testcases/*.rb"].each {|file| require file }
@@ -38,9 +38,9 @@ priority = opts[:priority]
 project = opts[:project]
 start_time = Time.now
 
-result_data = Log.new
-current_test_id = 0
-exit_status = true
+#result_data = Log.new
+#current_test_id = 0
+#exit_status = true
 mer_utility_object = MerchantUtility.new(config)
 mer_utility_object.launch(medium, platform)
 testcase_pass = []
@@ -80,18 +80,18 @@ else
           purpose = run.get_test_variables
           desc = purpose.values
           #criteria = Log.testcase_result
-          @row[:"#{k}"] = desc[0],"#{medium}", criteria
-          if criteria == 'pass'
-            testcase_pass << 1
-          else
-            testcase_fail << 1
-          end
+          #@row[:"#{k}"] = desc[0],"#{medium}", criteria
+          #if criteria == 'pass'
+            #testcase_pass << 1
+          #else
+            #testcase_fail << 1
+          #end
         end
       end
     end
   end
 end
-
+=begin
 @overall = testcase_pass.size + testcase_fail.size
 Results.create_report
 Results.insert_head_title(' -- Report --')
@@ -108,6 +108,7 @@ Results.start_table
 end
 Results.close_table
 EmailSender.email_sender(Results.get_html_text)
+=end
 mer_utility_object.close
 # For E.g.,ruby run_suite.rb -s ex.yaml -m firefox -c sgp.yml -p web -r regression
 # Project = ruby run_suite.rb -o project.yaml -m firefox -c sgp.yml -p web -r regression

@@ -1,8 +1,11 @@
-Dir["./lib/*.rb"].each {|file| require file }
+Dir["./baseclasses/orders/*.rb"].each {|file| require file }
 
-class LoginTest 
+class FtpUpload < UploadFile
+
+  # Expected:
+  #   options[:utility_object] <Class Object> : HemUtility class object to get configration
   def initialize(options)
-    @purpose = 'login'
+    @purpose = 'It checks login, adding BN product to cart, add and verify shipping and billing details, place order and Logout'
     @priority = 'smoke'
     @mer_utility = options
     super(options)
@@ -19,7 +22,6 @@ class LoginTest
     rescue Exception => e
       p e.message
       p e.backtrace
-
     end
   end
 
@@ -28,14 +30,6 @@ class LoginTest
       p 'MerchantUtility::Login Pass'
     else
       p 'MerchantUtility::Login Fail'
-    end
-  end
-
-  def step2
-    if @mer_utility.logout
-      p 'MerchantUtility::Logout Pass'
-    else
-      p 'MerchantUtility::Logout Fail'
     end
   end
 end
