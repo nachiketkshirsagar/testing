@@ -5,7 +5,7 @@ class FtpUpload < UploadFile
   # Expected:
   #   options[:utility_object] <Class Object> : HemUtility class object to get configration
   def initialize(options)
-    @purpose = 'It checks login, adding BN product to cart, add and verify shipping and billing details, place order and Logout'
+    @purpose = 'Upload a file throught the FTP client'
     @priority = 'smoke'
     @mer_utility = options
     super(options)
